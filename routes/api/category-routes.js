@@ -18,6 +18,14 @@ router.get('/', (req, res) => {
 });
 
 router.get('/:id', (req, res) => {
+  Category.findByPk(req.params.id).then(data => {
+    res.json(data);
+  }).catch(error => {
+    res.status(500).json({
+      msg: "Error retrieving category",
+      error: error
+    })
+  })
   // find one category by its `id` value
   // be sure to include its associated Products
 });
