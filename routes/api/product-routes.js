@@ -5,12 +5,29 @@ const { Product, Category, Tag, ProductTag } = require('../../models');
 
 // get all products
 router.get('/', (req, res) => {
+  Product.findAll().then(data => {
+    res.json(data);
+  }).catch(error => {
+    console.log(error);
+    res.status(500).json({
+      msg: "There was an error",
+      error: error
+    })
+  })
   // find all products
   // be sure to include its associated Category and Tag data
 });
 
 // get one product
 router.get('/:id', (req, res) => {
+  Product.findByPk(req.params.id).then(data => {
+    res.json(data);
+  }).catch(error => {
+    res.status(500).json({
+      msg: "Error retrieving category",
+      error: error
+    })
+  })
   // find a single product by its `id`
   // be sure to include its associated Category and Tag data
 });
@@ -90,7 +107,23 @@ router.put('/:id', (req, res) => {
 });
 
 router.delete('/:id', (req, res) => {
-  // delete one product by its `id` value
+  Product.destroy({
+    where:{
+        id:req.params.id
+    }
+  }).then(data=>{
+    if(data){
+        return res.json(data)
+    } else {
+        return res.status(404).json({msg:"no such record"})
+    }
+  }).catch(err=>{
+    console.log(err);
+    res.status(500).json({
+        msg:"an error occurred",
+        err:err
+    })
+  })
 });
 
 module.exports = router;
