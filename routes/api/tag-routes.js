@@ -36,7 +36,7 @@ router.get('/:id', (req, res) => {
 
 router.post('/', (req, res) => {
   Tag.create({
-    tag_name: "Tag test name 2"
+    tag_name: req.body.tag_name
   }).then( data => {
     res.status(201).json(data);
   }).catch( error => {
