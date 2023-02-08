@@ -48,13 +48,13 @@ To install, download the files found in the root directory of github.  Create a 
 Once installed, users can test functionality with Insomnia, Postmates, or another API endpoint tester, or build and connect front end functionality
 
 ### Video walkthrough of functioning application
-https://www.youtube.com
+https://youtu.be/sFcBiLI1VTQ
 
-### Screenshot of landing page (index.html)
-![Index Thumbnail](./public/assets/images/index-thumbnail.png)
+### Screenshot of terminal application & Sequelize commands in terminal
+![App Thumbnail](./assets/app-thumbnail.png)
 
-### Screenshot of notes page (/notes)
-![Notes Thumbnail](./public/assets/images/notes-thumbnail.png)
+### Screenshot Insomnia testing GET routes
+![Insomnia Thumbnail](./assets/insomnia-thumbnail.png)
 
 ## License
 
