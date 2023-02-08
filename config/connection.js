@@ -1,5 +1,7 @@
+//Use dotenv to protect variables
 require('dotenv').config();
 
+//Setup our db connection
 const Sequelize = require('sequelize');
 
 const sequelize = process.env.JAWSDB_URL

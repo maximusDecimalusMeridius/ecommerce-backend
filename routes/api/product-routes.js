@@ -110,6 +110,7 @@ router.put('/:id', (req, res) => {
     });
 });
 
+//DELETE a product based on the id passed in params
 router.delete('/:id', (req, res) => {
   Product.destroy({
     where:{
